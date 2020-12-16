@@ -16,6 +16,6 @@ UI tests are still a work in progress
 
 1. Clone gerrit `git clone https://gerrit.googlesource.com/gerrit`
 1. Clone plugin to `plugins/zuul-results-summary` `cd plugins; git clone https://gerrit.googlesource.com/plugins/zuul-results-summary
-1. Run build `cd ..; bazel build plugins/zuul-results-summary:zuul_summary_status`
-1. Copy resulting plugin `bazel-bin/plugins/zuul-results-summary/zuul-results-summary-bundle.js` to Gerrit plugins directory
+1. Run build `cd ..; bazel build plugins/zuul-results-summary:zuul-results-summary`
+1. Copy resulting plugin `bazel-bin/plugins/zuul-results-summary/zuul-results-summary.js` to Gerrit plugins directory
 
