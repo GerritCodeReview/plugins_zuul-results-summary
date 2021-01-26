@@ -39,13 +39,12 @@ class ZuulSummaryStatusTab extends Polymer.Element {
   <style>
     table {
       table-layout: fixed;
-      width: 100%;
       border-collapse: collapse;
     }
 
     th, td {
       text-align: left;
-      padding: 2px;
+      padding: 4px;
     }
 
     th {
