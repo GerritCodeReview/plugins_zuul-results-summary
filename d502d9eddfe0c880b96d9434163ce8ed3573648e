@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9e7c2281_5dfc858f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1088994
+      },
+      "writtenOn": "2021-01-26T16:54:32Z",
+      "side": 1,
+      "message": "I like the proposed new look",
+      "revId": "d502d9eddfe0c880b96d9434163ce8ed3573648e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
