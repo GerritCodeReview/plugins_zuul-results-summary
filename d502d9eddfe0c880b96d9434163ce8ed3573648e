@@ -16,6 +16,23 @@
       "message": "I like the proposed new look",
       "revId": "d502d9eddfe0c880b96d9434163ce8ed3573648e",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9fde8459_d34a9641",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1026270
+      },
+      "writtenOn": "2021-01-27T01:30:16Z",
+      "side": 1,
+      "message": "It\u0027s just my opinion, but I think that having the column width uneven across the CI\u0027s is not so great; I think I originally tried this with one of the cinder changes that has about 15 different CI results and it made it look odd.  I\u0027m not sure how we could space it so that it\u0027s the width of the longest job of all the jobs, which is why I just stretched it to 100%\n\nAlso the \"Files\" table/tab went 100% too, which seemed like precedent\n\nThis is of course just my opinion ... I don\u0027t really know how to decide between subjective choices so I\u0027m of course open to suggestions",
+      "revId": "d502d9eddfe0c880b96d9434163ce8ed3573648e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
