@@ -57,6 +57,11 @@ class ZuulSummaryStatusTab extends Polymer.Element {
       color: var(--primary-text-color, rgb(33, 33, 33));
     }
 
+    thead tr th:first-child,
+    tbody tr td:first-child {
+     padding-left: 12px;
+    }
+
     a:link, a:visited {
       color: var(--link-color);
     }
@@ -119,24 +124,28 @@ class ZuulSummaryStatusTab extends Polymer.Element {
   </style>
 
   <template is="dom-repeat" items="[[__table]]">
-   <div style="padding-left:5px; padding-bottom:2px;">
+   <div style="padding-bottom:2px;">
    <table>
-    <tr>
-     <th>
-      <template is="dom-if" if="{{item.succeeded}}"><span style="color:green"><iron-icon icon="gr-icons:check"></iron-icon></span></template>
-      <template is="dom-if" if="{{!item.succeeded}}"><span style="color:red"><iron-icon icon="gr-icons:close"></iron-icon></span></template>
-      <b>[[item.author_name]]</b> on Patchset <b>[[item.revision]]</b> in pipeline <b>[[item.pipeline]]</b></th>
-     <th><template is="dom-if" if="{{item.rechecks}}">[[item.rechecks]] rechecks</template></th>
-     <th><b>[[item.date_string]]</b></th>
-    </tr>
-    <template is="dom-repeat" items="[[item.results]]" as="job">
+    <thead>
      <tr>
-      <template is="dom-if" if="{{job.link}}"><td><a href="{{job.link}}">[[job.job]]</a></td></template>
-      <template is="dom-if" if="{{!job.link}}"><td><a>[[job.job]]</a></td></template>
-      <td><span class$="status-[[job.result]]">[[job.result]]</span></td>
-      <td>[[job.time]]</td>
+      <th>
+       <template is="dom-if" if="{{item.succeeded}}"><span style="color:green"><iron-icon icon="gr-icons:check"></iron-icon></span></template>
+       <template is="dom-if" if="{{!item.succeeded}}"><span style="color:red"><iron-icon icon="gr-icons:close"></iron-icon></span></template>
+       <b>[[item.author_name]]</b> on Patchset <b>[[item.revision]]</b> in pipeline <b>[[item.pipeline]]</b></th>
+      <th><template is="dom-if" if="{{item.rechecks}}">[[item.rechecks]] rechecks</template></th>
+      <th><b>[[item.date_string]]</b></th>
      </tr>
-    </template>
+    </thead>
+    <tbody>
+     <template is="dom-repeat" items="[[item.results]]" as="job">
+      <tr>
+       <template is="dom-if" if="{{job.link}}"><td><a href="{{job.link}}">[[job.job]]</a></td></template>
+       <template is="dom-if" if="{{!job.link}}"><td><a>[[job.job]]</a></td></template>
+       <td><span class$="status-[[job.result]]">[[job.result]]</span></td>
+       <td>[[job.time]]</td>
+      </tr>
+     </template>
+    </tbody>
    </table>
    </div>
   </template>`;
