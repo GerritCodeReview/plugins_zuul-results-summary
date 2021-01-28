@@ -69,6 +69,24 @@
       "parentUuid": "1dccb2f9_71bbe07f",
       "revId": "d502d9eddfe0c880b96d9434163ce8ed3573648e",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d097387_27b0ba8a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1026270
+      },
+      "writtenOn": "2021-01-28T22:56:47Z",
+      "side": 1,
+      "message": "\u003e Another option might be to do a mouseover highlight thing where the whole line/row \"jumps\" as the mouse moves over to pull out the line\n\nAfter thinking about it, I think this is the best solution.  It greatly enhances the ability to see the row of details for each job, and is consistent with other parts of the UI, particularly the file chooser tab which is 100% and uses a row highlight for each file.\n\nI\u0027ve implemented this with\n\nhttps://gerrit-review.googlesource.com/c/plugins/zuul-results-summary/+/295063",
+      "parentUuid": "98ecda7f_2b9a30a0",
+      "revId": "d502d9eddfe0c880b96d9434163ce8ed3573648e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
