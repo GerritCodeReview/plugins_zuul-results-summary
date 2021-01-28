@@ -57,7 +57,7 @@ class ZuulSummaryStatusTab extends Polymer.Element {
       color: var(--primary-text-color, rgb(33, 33, 33));
     }
 
-    a:link {
+    a:link, a:visited {
       color: var(--link-color);
     }
 
