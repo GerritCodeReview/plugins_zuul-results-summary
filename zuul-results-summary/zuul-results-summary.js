@@ -77,7 +77,39 @@ class ZuulSummaryStatusTab extends Polymer.Element {
       color: red;
     }
 
+    .status-RETRY_LIMIT {
+      color: red;
+    }
+
+    .status-SKIPPED {
+      color: #73bcf7;
+    }
+
+    .status-ABORTED {
+      color: orange;
+    }
+
+    .status-MERGER_FAILURE {
+      color: orange;
+    }
+
     .status-NODE_FAILURE {
+      color: orange;
+    }
+
+    .status-TIMED_OUT {
+      color: ornage;
+    }
+
+    .status-POST_FAILURE {
+      color: orange;
+    }
+
+    .status-CONFIG_ERROR {
+      color: orange;
+    }
+
+    .status-DISK_FULL {
       color: orange;
     }
   </style>
