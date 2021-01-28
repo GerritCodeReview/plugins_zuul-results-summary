@@ -26,7 +26,10 @@ class ZuulSummaryStatusTab extends Polymer.Element {
     */
   static get properties() {
     return {
-      change: Object,
+      change: {
+        type: Object,
+        observer: '_changeChanged'
+      },
       revision: Object,
     };
   }
@@ -148,10 +151,8 @@ class ZuulSummaryStatusTab extends Polymer.Element {
     return [status, pipeline];
   }
 
-  /** ready function */
-  ready() {
-    super.ready();
-
+  /** Change Modified */
+  _changeChanged(change, oldChange) {
     /*
      * change-view-tab-content gets passed ChangeInfo object [1],
      * registered in the property "change".  We walk the list of
@@ -180,7 +181,7 @@ class ZuulSummaryStatusTab extends Polymer.Element {
      * [1] https://gerrit-review.googlesource.com/Documentation/rest-api-changes.html#change-info
      */
     this.__table = [];
-    this.change.messages.forEach(message => {
+    change.messages.forEach(message => {
       if (! (this._match_message_via_tag(message) ||
                     this._match_message_via_regex(message))) {
         return;
