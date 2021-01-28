@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d74870b9_f830bbe1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1010246
+      },
+      "writtenOn": "2021-01-28T23:49:02Z",
+      "side": 1,
+      "message": "Works on Chrome on Mac",
+      "revId": "6d79a8264547187d9da359e19ebe749cb43c8214",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
