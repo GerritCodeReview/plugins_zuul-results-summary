@@ -69,6 +69,10 @@ class ZuulSummaryStatusTab extends Polymer.Element {
      background-color: var(--background-color-tertiary, #f7ffff);
     }
 
+    tr:hover td {
+     background-color: var(--hover-background-color, #fffed);
+    }
+
     .status-SUCCESS {
       color: green;
     }
