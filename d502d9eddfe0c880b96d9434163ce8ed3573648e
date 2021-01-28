@@ -51,6 +51,24 @@
       "parentUuid": "9fde8459_d34a9641",
       "revId": "d502d9eddfe0c880b96d9434163ce8ed3573648e",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "98ecda7f_2b9a30a0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1026270
+      },
+      "writtenOn": "2021-01-28T06:06:52Z",
+      "side": 1,
+      "message": "That\u0027s the thing, I don\u0027t really have a solution that both keeps the columns in line AND keeps them consistent across multiple CI results.  Maybe I guess the whole thing has to go in a \u003cdiv\u003e that narrows it?  \n\nAnother option might be to do a mouseover highlight thing where the whole line/row \"jumps\" as the mouse moves over to pull out the line",
+      "parentUuid": "1dccb2f9_71bbe07f",
+      "revId": "d502d9eddfe0c880b96d9434163ce8ed3573648e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
