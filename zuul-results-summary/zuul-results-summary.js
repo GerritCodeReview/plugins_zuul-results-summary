@@ -107,7 +107,7 @@ class ZuulSummaryStatusTab extends Polymer.Element {
     }
 
     .status-TIMED_OUT {
-      color: ornage;
+      color: orange;
     }
 
     .status-POST_FAILURE {
