@@ -57,8 +57,8 @@ class ZuulSummaryStatusTab extends Polymer.Element {
       color: var(--primary-text-color, rgb(33, 33, 33));
     }
 
-    thead tr th:first-child,
-    tbody tr td:first-child {
+    thead tr th:first-of-type,
+    tbody tr td:first-of-type {
      padding-left: 12px;
     }
 
@@ -140,7 +140,7 @@ class ZuulSummaryStatusTab extends Polymer.Element {
      <template is="dom-repeat" items="[[item.results]]" as="job">
       <tr>
        <template is="dom-if" if="{{job.link}}"><td><a href="{{job.link}}">[[job.job]]</a></td></template>
-       <template is="dom-if" if="{{!job.link}}"><td><a>[[job.job]]</a></td></template>
+       <template is="dom-if" if="{{!job.link}}"><td><span style="color: var(--secondary-text-color)">[[job.job]]</span></td></template>
        <td><span class$="status-[[job.result]]">[[job.result]]</span></td>
        <td>[[job.time]]</td>
       </tr>
@@ -262,10 +262,17 @@ class ZuulSummaryStatusTab extends Polymer.Element {
       //   - openstack-tox-py35 http://... : SUCCESS in 2m 45
       const results = [];
       const lines = message.message.split('\n');
-      const resultRe = /^- (?<job>[^ ]+) (?:(?<link>https?:\/\/[^ ]+)|[^ ]+) : (?<result>[^ ]+) in (?<time>.*)/;
+      const resultRe = /^- (?<job>[^ ]+) (?:(?<link>https?:\/\/[^ ]+)|[^ ]+) : (?<result>[^ ]+)( in (?<time>.*))?/;
       lines.forEach(line => {
         const result = resultRe.exec(line);
-        if (result) {
+          if (result) {
+            // Note SKIPPED jobs have no time and an invalid placeholder
+            // URL.  Since there's no point linking this URL, null
+            // that match out and it will just use the job name but not
+            // make it a <a>.
+            if (result.groups.result === "SKIPPED") {
+              result.groups.link = null;
+            }
           results.push(result.groups);
         }
       });
