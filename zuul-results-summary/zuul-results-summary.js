@@ -86,6 +86,10 @@ class ZuulSummaryStatusTab extends Polymer.Element {
       color: red;
     }
 
+    .status-ERROR {
+      color: red;
+    }
+
     .status-RETRY_LIMIT {
       color: red;
     }
@@ -141,7 +145,8 @@ class ZuulSummaryStatusTab extends Polymer.Element {
       <tr>
        <template is="dom-if" if="{{job.link}}"><td><a href="{{job.link}}">[[job.job]]</a></td></template>
        <template is="dom-if" if="{{!job.link}}"><td><span style="color: var(--secondary-text-color)">[[job.job]]</span></td></template>
-       <td><span class$="status-[[job.result]]">[[job.result]]</span></td>
+       <template is="dom-if" if="{{job.errormsg}}"><td><span title="[[job.errormsg]]" class$="status-[[job.result]]">[[job.result]]</span></td></template>
+       <template is="dom-if" if="{{!job.errormsg}}"><td><span class$="status-[[job.result]]">[[job.result]]</span></td></template>
        <td>[[job.time]]</td>
       </tr>
      </template>
@@ -258,22 +263,32 @@ class ZuulSummaryStatusTab extends Polymer.Element {
         }
       }
 
-      // Find each result line, e.g. :
-      //   - openstack-tox-py35 http://... : SUCCESS in 2m 45
+      // Find each result line
       const results = [];
       const lines = message.message.split('\n');
-      const resultRe = /^- (?<job>[^ ]+) (?:(?<link>https?:\/\/[^ ]+)|[^ ]+) : (?<result>[^ ]+)( in (?<time>.*))?/;
+      // We have to match a few different things ...
+      // A "standard" line is like
+      //   - passing-job http://... : SUCCESS in 2m 45s
+      // Skipped jobs don't have a time, e.g.
+      //   - skipped-job http://... : SKIPPED
+      // Error status has a string before the time
+      //   - error-job http://... : ERROR A freeform string in 2m 45s
+
+      const resultRe = /^- (?<job>[^ ]+) (?:(?<link>https?:\/\/[^ ]+)|[^ ]+) : ((ERROR (?<errormsg>.*?) in (?<errtime>.*))|(?<result>[^ ]+)( in (?<time>.*))?)/;
       lines.forEach(line => {
         const result = resultRe.exec(line);
           if (result) {
-            // Note SKIPPED jobs have no time and an invalid placeholder
-            // URL.  Since there's no point linking this URL, null
-            // that match out and it will just use the job name but not
-            // make it a <a>.
             if (result.groups.result === "SKIPPED") {
               result.groups.link = null;
             }
-          results.push(result.groups);
+            // Note you can't duplicate match group names, even if
+            // it's behind an | statement like above.  So for error
+            // matches we copy things into the right place to display.
+            if (result.groups.errormsg) {
+              result.groups.result = "ERROR";
+              result.groups.time = result.groups.errtime;
+            }
+            results.push(result.groups);
         }
       });
 
