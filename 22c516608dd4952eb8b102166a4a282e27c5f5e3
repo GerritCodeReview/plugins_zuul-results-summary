@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "126f7a9b_954e9c35",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1026270
+      },
+      "writtenOn": "2021-02-25T02:30:00Z",
+      "side": 1,
+      "message": "Sample of output @\n\nhttps://storage.gra.cloud.ovh.net/v1/AUTH_dcaab5e32b234d56b626f72581e3644c/zuul_opendev_logs_506/777298/2/check/system-config-run-review-3.3/5067adc/bridge.openstack.org/screenshots/gerrit-change-page-2.png",
+      "revId": "22c516608dd4952eb8b102166a4a282e27c5f5e3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
