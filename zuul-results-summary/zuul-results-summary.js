@@ -26,9 +26,10 @@ class ZuulSummaryStatusTab extends Polymer.Element {
    */
   static get properties() {
     return {
+      plugin: Object,
       change: {
         type: Object,
-        observer: '_changeChanged',
+        observer: '_processChange',
       },
       revision: Object,
     };
@@ -152,6 +153,34 @@ class ZuulSummaryStatusTab extends Polymer.Element {
   </template>`;
   }
 
+  async _processChange(change) {
+    // TODO(davido): Cache results of project config request
+    const processMessages = await this._projectEnabled(change.project);
+    if (processMessages) {
+      this._processMessages(change);
+    }
+  }
+
+  /**
+   * Returns whether the project is enabled for Zuul.
+   *
+   * @param {String} project
+   * @return {promise<boolean>} Resolves to true if the project is enabled
+   *     otherwise, false.
+   */
+  async _projectEnabled(project) {
+    const configPromise = this.plugin.restApi().get(
+        `/projects/${encodeURIComponent(project)}/` +
+        `${encodeURIComponent(this.plugin.getPluginName())}~config`);
+    try {
+      const config = await configPromise;
+      return config && config.enabled;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  }
+
   /** Look for Zuul tag in message
    *
    * @param{ChangeMessageInfo} message
@@ -201,7 +230,7 @@ class ZuulSummaryStatusTab extends Polymer.Element {
   }
 
   /** Change Modified */
-  _changeChanged(change, oldChange) {
+  _processMessages(change) {
     /*
      * change-view-tab-content gets passed ChangeInfo object [1],
      * registered in the property "change".  We walk the list of
