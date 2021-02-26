@@ -69,6 +69,24 @@
       "parentUuid": "0ba84d77_94dc39fe",
       "revId": "ce0ebd524edab6292e407c0122725077429374b7",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5050c34e_a7c9a252",
+        "filename": "zuul-results-summary/zuul-results-summary.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2021-02-26T09:46:21Z",
+      "side": 1,
+      "message": "Thanks for your help. I uploaded the plugin, built from the follow-up change, here: [1]. If you deploy that jar, on your test site, then the Zuul integration is not enabled, and config request would return false, so that I would expect that this line is rendered on \"Zuul Summary\" tab:\n\n  \u003ctemplate is\u003d\"dom-if\" if\u003d\"[[!_enabled]]\"\u003e\n      Zuul integration is not enabled.\n  \u003c/template\u003e\n\nAlso if I change the template to invoke a method say:\n\n  \u003ctemplate is\u003d\"dom-if\" if\u003d\"[[_isNotEnabled(_enabled)]]\"\u003e\n\nand add this method like this:\n\n  _isNotEnabled(status) {\n    return !status;\n  }\n\nAnd put a breakpoint in that method, it\u0027s not called either.\n\nI tested it against gerrit@HEAD on latest Chrome (Version 89).\n\n[1] http://ostrovsky.org/httpdocs/gerrit/zuul-results-summary/zuul-results-summary.jar",
+      "parentUuid": "6129b12e_bd8100ee",
+      "revId": "ce0ebd524edab6292e407c0122725077429374b7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
