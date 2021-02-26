@@ -27,6 +27,7 @@ class ZuulSummaryStatusTab extends Polymer.Element {
   static get properties() {
     return {
       plugin: Object,
+      _enabled: Boolean,
       change: {
         type: Object,
         observer: '_processChange',
@@ -125,6 +126,9 @@ class ZuulSummaryStatusTab extends Polymer.Element {
     }
   </style>
 
+  <template is="dom-if" if="[[!_enabled]]">
+      Zuul integration is not enabled.
+  </template>
   <template is="dom-repeat" items="[[__table]]">
    <div style="padding-bottom:2px;">
    <table>
@@ -161,8 +165,8 @@ class ZuulSummaryStatusTab extends Polymer.Element {
    */
   async _processChange(change) {
     // TODO(davido): Cache results of project config request
-    const processMessages = await this._projectEnabled(change.project);
-    if (processMessages) {
+    this._enabled = await this._projectEnabled(change.project);
+    if (this._enabled) {
       this._processMessages(change);
     }
   }
