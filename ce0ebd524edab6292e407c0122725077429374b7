@@ -51,6 +51,24 @@
       "parentUuid": "492968e4_03a37f7f",
       "revId": "ce0ebd524edab6292e407c0122725077429374b7",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6129b12e_bd8100ee",
+        "filename": "zuul-results-summary/zuul-results-summary.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1013302
+      },
+      "writtenOn": "2021-02-26T09:19:56Z",
+      "side": 1,
+      "message": "Sorry, I have no idea. Looks all good.\n\nYou can send me the plugin js file and a link to a Gerrit instance where this plugin would work. Then I can debug it for you.",
+      "parentUuid": "0ba84d77_94dc39fe",
+      "revId": "ce0ebd524edab6292e407c0122725077429374b7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
