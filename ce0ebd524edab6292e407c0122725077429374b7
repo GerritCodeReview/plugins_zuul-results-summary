@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eeea5776_eecc6d04",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2021-02-26T08:50:17Z",
+      "side": 1,
+      "message": "@Dhruv, @Ben, any idea why the content is not rendered in not enabled case (see my comment in JS file)?",
+      "revId": "ce0ebd524edab6292e407c0122725077429374b7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "492968e4_03a37f7f",
+        "filename": "zuul-results-summary/zuul-results-summary.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2021-02-26T08:50:17Z",
+      "side": 1,
+      "message": "If I add this section like this, it\u0027s not rendered:\n\n  \u003ctemplate is\u003d\"dom-if\" if\u003d\"[[!_enabled]]\"\u003e\n      Zuul integration is not enabled.\n  \u003c/template\u003e",
+      "revId": "ce0ebd524edab6292e407c0122725077429374b7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
