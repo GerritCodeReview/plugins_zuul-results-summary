@@ -105,6 +105,24 @@
       "parentUuid": "5050c34e_a7c9a252",
       "revId": "ce0ebd524edab6292e407c0122725077429374b7",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b7f6e48_426e06fa",
+        "filename": "zuul-results-summary/zuul-results-summary.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2021-02-26T16:56:39Z",
+      "side": 1,
+      "message": "Sorry, it was a typo, this is the correct link: [1].\n\n[1] https://ostrovsky.org/gerrit/zuul-results-summary.jar",
+      "parentUuid": "bca58b39_a7150ca4",
+      "revId": "ce0ebd524edab6292e407c0122725077429374b7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
