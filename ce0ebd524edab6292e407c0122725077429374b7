@@ -33,6 +33,24 @@
       "message": "If I add this section like this, it\u0027s not rendered:\n\n  \u003ctemplate is\u003d\"dom-if\" if\u003d\"[[!_enabled]]\"\u003e\n      Zuul integration is not enabled.\n  \u003c/template\u003e",
       "revId": "ce0ebd524edab6292e407c0122725077429374b7",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ba84d77_94dc39fe",
+        "filename": "zuul-results-summary/zuul-results-summary.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2021-02-26T08:59:05Z",
+      "side": 1,
+      "message": "I uploaded WIP change 298469 as follow-up to demonstrate the problem.",
+      "parentUuid": "492968e4_03a37f7f",
+      "revId": "ce0ebd524edab6292e407c0122725077429374b7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
