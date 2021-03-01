@@ -123,6 +123,24 @@
       "parentUuid": "bca58b39_a7150ca4",
       "revId": "ce0ebd524edab6292e407c0122725077429374b7",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7708a3d7_892f7ac3",
+        "filename": "zuul-results-summary/zuul-results-summary.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1013302
+      },
+      "writtenOn": "2021-03-01T08:00:24Z",
+      "side": 1,
+      "message": "Using the Frontend Dev Helper extension this works just fine:\nhttps://imgur.com/a/t1jKW6d\n\nI have extracted the js file from the jar, copied it into the plugins dir and configured the extension like so: https://imgur.com/a/3Q8PVqf\n\nI had some problems with the Zuul Summary tab not showing up at all, but that is not the problem that you are seeing, right?",
+      "parentUuid": "6b7f6e48_426e06fa",
+      "revId": "ce0ebd524edab6292e407c0122725077429374b7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
