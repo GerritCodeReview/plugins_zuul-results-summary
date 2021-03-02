@@ -158,6 +158,24 @@
       "parentUuid": "6b7f6e48_426e06fa",
       "revId": "ce0ebd524edab6292e407c0122725077429374b7",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba00c087_6d398dbb",
+        "filename": "zuul-results-summary/zuul-results-summary.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2021-03-02T12:15:28Z",
+      "side": 1,
+      "message": "Right. I never used Frontend Dev Helper. The Zuul Summary tab is always there.",
+      "parentUuid": "7708a3d7_892f7ac3",
+      "revId": "ce0ebd524edab6292e407c0122725077429374b7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
