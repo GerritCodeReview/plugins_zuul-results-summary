@@ -18,6 +18,23 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d81bd25_6989e156",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1026270
+      },
+      "writtenOn": "2021-03-02T03:50:56Z",
+      "side": 1,
+      "message": "I\u0027ve been playing with this in [1].  Currently it fails to build as part of the Gerrit 3.2 build, because of linter errors.  I\u0027ve previously reported this in [3].  You can see these errors at [4] but they are:\n\n | plugins/zuul-results-summary/zuul-results-summary/zuul-results-summary.js:156: ERROR - Function must have JSDoc.\n |   async _processChange(change) {\n |         ^\n |   ProTip: \"JSC_MISSING_JSDOC\" or \"lintChecks\" can be added to the `suppress` attribute of:\n |   //plugins/zuul-results-summary:zuul-results-summary-ui_closure_lib\n |\n | plugins/zuul-results-summary/zuul-results-summary/zuul-results-summary.js:167: ERROR - Declaration of String object instead of primitive type.\n |    * @param {String} project\n |              ^\n |   ProTip: \"JSC_PRIMITIVE_OBJECT_DECLARATION\" or \"lintChecks\" can be added to the `suppress` attribute of:\n |   //plugins/zuul-results-summary:zuul-results-summary-ui_closure_lib\n\n\nAs in the reported bug, for whatever reason this same linter doesn\u0027t appear to be part of the build process on the 3.3 branch, so it is building there.  I\u0027m still testing it there.\n\n[1] https://review.opendev.org/c/opendev/system-config/+/778116\n[2] https://zuul.opendev.org/t/openstack/build/9ab31c57df854e47822a142c90f60018\n[3] https://bugs.chromium.org/p/gerrit/issues/detail?id\u003d13834\u0026q\u003d\u0026can\u003d4\n[4] https://zuul.opendev.org/t/openstack/build/9ab31c57df854e47822a142c90f60018/log/job-output.txt#3940",
+      "revId": "ce0ebd524edab6292e407c0122725077429374b7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "492968e4_03a37f7f",
