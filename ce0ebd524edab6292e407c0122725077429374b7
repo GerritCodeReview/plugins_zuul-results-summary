@@ -35,6 +35,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8aa617e4_4e9cee74",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2021-03-02T21:36:44Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "9d81bd25_6989e156",
+      "revId": "ce0ebd524edab6292e407c0122725077429374b7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "492968e4_03a37f7f",
@@ -192,6 +210,24 @@
       "side": 1,
       "message": "I have also copied the jar into the plugins directory of my local test site. Same result. For me everything is working just fine: The text \"Zuul integration is not enabled\" is showing up on the Zuul Summary tab.\n\nAre you on master? Did you do a fresh init of your local test site? Did you try on Chrome?",
       "parentUuid": "ba00c087_6d398dbb",
+      "revId": "ce0ebd524edab6292e407c0122725077429374b7",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "676dda22_67fe8bf9",
+        "filename": "zuul-results-summary/zuul-results-summary.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2021-03-02T21:36:44Z",
+      "side": 1,
+      "message": "\u003e The text \"Zuul integration is not enabled\" is showing up on the Zuul Summary tab.\n\nHmm, it works now indeed.\n\n\u003e Are you on master? Did you do a fresh init of your local test site? Did you try on Chrome?\n\nYes, I\u0027m on master; yes I\u0027m using latest Chrome version available.\n\nNot sure what was wrong though, I cleaned the cache and it just works: [1].\n\nThanks again for your help 😊\n\n[1] https://imgur.com/a/3gMeKj9",
+      "parentUuid": "5365906f_8b828d13",
       "revId": "ce0ebd524edab6292e407c0122725077429374b7",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
