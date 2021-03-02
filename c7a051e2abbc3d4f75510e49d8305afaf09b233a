@@ -22,6 +22,30 @@
       },
       "revId": "c7a051e2abbc3d4f75510e49d8305afaf09b233a",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0aadaa9d_7c5384c2",
+        "filename": "zuul-results-summary/zuul-results-summary.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2021-03-02T21:37:55Z",
+      "side": 1,
+      "message": "Should just work, see discussion in parent change.",
+      "parentUuid": "40ea5949_f4530334",
+      "range": {
+        "startLine": 129,
+        "startChar": 2,
+        "endLine": 131,
+        "endChar": 13
+      },
+      "revId": "c7a051e2abbc3d4f75510e49d8305afaf09b233a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
