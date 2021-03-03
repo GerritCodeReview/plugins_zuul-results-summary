@@ -16,6 +16,24 @@
       "message": "I got this running, although I haven\u0027t fully debugged it.  But at this stage, it doesn\u0027t seem to show anything in the panel.  The overall test is [1] but the interesting thing is probably the screenshots\n\n\nhttps://add6619206a22a02ddcd-6e5bdb3c517f39f442b10ad5d86d4a09.ssl.cf1.rackcdn.com/778116/5/check/system-config-run-review-3.2/a86c890/bridge.openstack.org/screenshots/gerrit-change-page-1.png\n\nhttps://add6619206a22a02ddcd-6e5bdb3c517f39f442b10ad5d86d4a09.ssl.cf1.rackcdn.com/778116/5/check/system-config-run-review-3.2/a86c890/bridge.openstack.org/screenshots/gerrit-change-page-2.png\n\nboth of them show the tab, but no contents\n\n\n[1] https://zuul.opendev.org/t/openstack/build/a86c8901b3a24dc3895f2a4666e346ab",
       "revId": "cb48f1bebd1f58e86a3720749cbdcf75c0345bcd",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "22c35a6f_349bb07e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2021-03-03T07:37:36Z",
+      "side": 1,
+      "message": "Have you enabled the config option on the project page, see: [1]? Have you cleaned the caches? Can you debug it?\n\n[1] https://imgur.com/a/WVk5Vsy",
+      "parentUuid": "2d20c530_f92d81c0",
+      "revId": "cb48f1bebd1f58e86a3720749cbdcf75c0345bcd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
