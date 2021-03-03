@@ -88,6 +88,24 @@
       "parentUuid": "129cce15_ff3a373c",
       "revId": "cb48f1bebd1f58e86a3720749cbdcf75c0345bcd",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "109fd7e6_c72b52b1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2021-03-03T10:36:13Z",
+      "side": 1,
+      "message": "\u003e I enabled it in the global config [1] and it must have worked because the tab comes up? \n\nThe tab will be always shown, even if not enabled, but the text should be rendered.\n\n\u003e ... yes I can propose that if nobody beats me to it \n\nSorry, I did it: [1] 😊\n\n[1] https://review.opendev.org/c/opendev/system-config/+/778404",
+      "parentUuid": "f1446c8d_173c0e5b",
+      "revId": "cb48f1bebd1f58e86a3720749cbdcf75c0345bcd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
