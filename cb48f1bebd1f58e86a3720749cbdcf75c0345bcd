@@ -70,6 +70,24 @@
       "parentUuid": "f5d6e72d_ef4d2f29",
       "revId": "cb48f1bebd1f58e86a3720749cbdcf75c0345bcd",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1446c8d_173c0e5b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1026270
+      },
+      "writtenOn": "2021-03-03T10:21:53Z",
+      "side": 1,
+      "message": "\u003e Can you also remove obsolete Bazel spawn strategies\n\nThat\u0027s the build flags @\n\nhttps://opendev.org/opendev/system-config/src/branch/master/roles/bazelisk-build/tasks/main.yaml\n\n... yes I can propose that if nobody beats me to it 😀",
+      "parentUuid": "129cce15_ff3a373c",
+      "revId": "cb48f1bebd1f58e86a3720749cbdcf75c0345bcd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
