@@ -177,6 +177,23 @@
       "parentUuid": "109fd7e6_c72b52b1",
       "revId": "cb48f1bebd1f58e86a3720749cbdcf75c0345bcd",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d3a1b55_ad93f62a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1026270
+      },
+      "writtenOn": "2021-03-11T22:52:48Z",
+      "side": 1,
+      "message": "I doubt there are many users other than OpenDev at this point.  But I think we should probably merge this after a tag so we give people a point to pin to",
+      "revId": "cb48f1bebd1f58e86a3720749cbdcf75c0345bcd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
