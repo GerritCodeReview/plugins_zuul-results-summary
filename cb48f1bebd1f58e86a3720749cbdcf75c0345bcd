@@ -141,6 +141,24 @@
       "parentUuid": "4332e116_23b4ec44",
       "revId": "cb48f1bebd1f58e86a3720749cbdcf75c0345bcd",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6fbd076_feaa4d5e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1026270
+      },
+      "writtenOn": "2021-03-11T22:39:58Z",
+      "side": 1,
+      "message": "After getting the configuration right, I am now seeing the results as expected, e.g.\n\nhttps://7085747892e7d0f91e48-2bc180aa14447137d9bc88cfec219012.ssl.cf1.rackcdn.com/778116/7/check/system-config-run-review-3.2/023e752/bridge.openstack.org/screenshots/gerrit-change-page-1.png",
+      "parentUuid": "6726ae2e_e46f6449",
+      "revId": "cb48f1bebd1f58e86a3720749cbdcf75c0345bcd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
