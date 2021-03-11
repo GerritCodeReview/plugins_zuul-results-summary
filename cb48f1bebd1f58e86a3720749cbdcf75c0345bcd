@@ -106,6 +106,23 @@
       "parentUuid": "f1446c8d_173c0e5b",
       "revId": "cb48f1bebd1f58e86a3720749cbdcf75c0345bcd",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4332e116_23b4ec44",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1026270
+      },
+      "writtenOn": "2021-03-11T05:09:59Z",
+      "side": 1,
+      "message": "OK, I finally got back to this.  I have a server on hold at\n\n https://158.69.66.156/\n\n(have to accept self-signed certificate)\n\nIt does appear to work correctly when I go in via the web UI and activate the plugin for the the specific repository.  However, it was not activated for the project by default.\n\nYou can see in \n\n https://review.opendev.org/c/opendev/system-config/+/778116/6/playbooks/test-review.yaml\n\nI have added to All-Projects:project.config\n\n [plugin \"zuulResultsSummary\"]\n      enabled \u003d true\n\nYou can see where this got pushed into the config at \n\n https://42d44f2eea844233ee90-a652dfde2626cf7f56c641f7d1ec9aa2.ssl.cf1.rackcdn.com/778116/6/check/system-config-run-review-3.2/631dce3/bridge.openstack.org/ara-report/result/1e9c0817-1cf2-4642-b0e0-8a04a1bcbf87/\n\nPerhaps I have misunderstood and this won\u0027t apply globally?  Is there something else I should try?\n\nWe will need a way to enable this globally for our Gerrit.  We don\u0027t want to have to update the config of every project.",
+      "revId": "cb48f1bebd1f58e86a3720749cbdcf75c0345bcd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
