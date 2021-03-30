@@ -211,6 +211,24 @@
       "message": "What about the documentation updates?",
       "revId": "cb48f1bebd1f58e86a3720749cbdcf75c0345bcd",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd5b9dde_548e62f1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2021-03-30T18:02:03Z",
+      "side": 1,
+      "message": "Added the documentation:\n\n* about.md\n* config.md\n* rest-api-config.md\n\nMain documentation page screenshot is here: [1].\n\n[1] https://imgur.com/a/7KVMX5r\n\nDone.",
+      "parentUuid": "939d356d_4304e735",
+      "revId": "cb48f1bebd1f58e86a3720749cbdcf75c0345bcd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
