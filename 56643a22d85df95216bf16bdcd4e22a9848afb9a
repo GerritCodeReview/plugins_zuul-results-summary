@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e3ece4d_7179aa76",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2021-03-31T11:35:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c9c8180b_35b2f865",
+      "range": {
+        "startLine": 15,
+        "startChar": 18,
+        "endLine": 15,
+        "endChar": 26
+      },
+      "revId": "56643a22d85df95216bf16bdcd4e22a9848afb9a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2490055e_6c85db6b",
@@ -41,6 +65,24 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cacae129_83a6448d",
+        "filename": "resources/Documentation/config.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2021-03-31T11:35:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2490055e_6c85db6b",
+      "revId": "56643a22d85df95216bf16bdcd4e22a9848afb9a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "63468c83_039a472e",
@@ -54,6 +96,30 @@
       "writtenOn": "2021-03-31T10:06:12Z",
       "side": 1,
       "message": "nit: are you sure you need \u0027:\u0027 here?",
+      "range": {
+        "startLine": 53,
+        "startChar": 1,
+        "endLine": 53,
+        "endChar": 2
+      },
+      "revId": "56643a22d85df95216bf16bdcd4e22a9848afb9a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a0f44341_7f7f9b03",
+        "filename": "resources/Documentation/rest-api-config.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2021-03-31T11:35:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "63468c83_039a472e",
       "range": {
         "startLine": 53,
         "startChar": 1,
