@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ee1f90b3_5bba7715",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1026270
+      },
+      "writtenOn": "2021-04-13T23:03:46Z",
+      "side": 1,
+      "message": "This swaps the default from \n\nhttps://gerrit-review.googlesource.com/c/plugins/zuul-results-summary/+/298465\n\nso would be good if Luca/davido could chime in that it is ok with their plans.",
+      "revId": "f9921a7befd3636d789d9ba1e50017bc4a58c925",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
