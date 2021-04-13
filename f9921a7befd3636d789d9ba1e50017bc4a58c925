@@ -16,6 +16,23 @@
       "message": "This swaps the default from \n\nhttps://gerrit-review.googlesource.com/c/plugins/zuul-results-summary/+/298465\n\nso would be good if Luca/davido could chime in that it is ok with their plans.",
       "revId": "f9921a7befd3636d789d9ba1e50017bc4a58c925",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "47b5eb54_4a15fcc6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011217
+      },
+      "writtenOn": "2021-04-13T23:03:52Z",
+      "side": 1,
+      "message": "I was surprised the default behavior changed and would force us to make a configuration change in All-Projects. I think this gives a good compromise between supporting existing users and giving users that may want to disable the plugin that flexibility.",
+      "revId": "f9921a7befd3636d789d9ba1e50017bc4a58c925",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
