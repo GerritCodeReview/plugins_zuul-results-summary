@@ -41,7 +41,7 @@ class GetConfig implements RestReadView<ProjectResource> {
     result.enabled =
         cfgFactory
             .getFromProjectConfigWithInheritance(project.getNameKey(), pluginName)
-            .getBoolean(Module.KEY_PLUGIN_ENABLED, false);
+            .getBoolean(Module.KEY_PLUGIN_ENABLED, true);
 
     return Response.ok(result);
   }

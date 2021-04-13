@@ -51,7 +51,7 @@ plugin.
 
 |Field Name       |Description|
 |-----------------|-----------|
-|enabled          | Whether the project is enabled for Zuul CI integration|
+|enabled          | Whether the project is enabled for Zuul integration|
 
 
 SEE ALSO
