@@ -68,6 +68,23 @@
       "parentUuid": "30cd67b3_c6e3c4db",
       "revId": "f9921a7befd3636d789d9ba1e50017bc4a58c925",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "46b89808_1295377f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1026270
+      },
+      "writtenOn": "2021-04-19T22:00:50Z",
+      "side": 1,
+      "message": "Everyone seems OK with this, so let\u0027s go with it",
+      "revId": "f9921a7befd3636d789d9ba1e50017bc4a58c925",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
