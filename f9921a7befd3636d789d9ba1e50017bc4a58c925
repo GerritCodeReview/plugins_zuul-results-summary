@@ -50,6 +50,24 @@
       "message": "@Luca: With this change we would have to disable Zuul on All-Projects on GerritHub.io and only enable it selectively per project.",
       "revId": "f9921a7befd3636d789d9ba1e50017bc4a58c925",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d9db8af1_c3204ff2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2021-04-19T17:06:41Z",
+      "side": 1,
+      "message": "Yeah, no worries on that.",
+      "parentUuid": "30cd67b3_c6e3c4db",
+      "revId": "f9921a7befd3636d789d9ba1e50017bc4a58c925",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
