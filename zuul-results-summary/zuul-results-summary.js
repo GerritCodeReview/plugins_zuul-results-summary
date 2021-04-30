@@ -128,6 +128,10 @@ class ZuulSummaryStatusTab extends Polymer.Element {
     .status-DISK_FULL {
       color: orange;
     }
+
+    .date {
+      color: var(--deemphasized-text-color);
+    }
   </style>
 
   <template is="dom-if" if="[[!_enabled]]">
@@ -143,7 +147,7 @@ class ZuulSummaryStatusTab extends Polymer.Element {
        <template is="dom-if" if="{{!item.succeeded}}"><span style="color:red"><iron-icon icon="gr-icons:close"></iron-icon></span></template>
        <b>[[item.author_name]]</b> on Patchset <b>[[item.revision]]</b> in pipeline <b>[[item.pipeline]]</b></th>
       <th><template is="dom-if" if="{{item.rechecks}}">[[item.rechecks]] rechecks</template></th>
-      <th><b>[[item.date_string]]</b></th>
+      <th><span class="date"><gr-date-formatter show-date-and-time="" date-str="[[item.gr_date]]"></gr-date-formatter></span></th>
      </tr>
     </thead>
     <tbody>
@@ -255,8 +259,10 @@ class ZuulSummaryStatusTab extends Polymer.Element {
      * __table is an [] of objects
      *
      *  author: "<string> CI"
-     *  date: date message posted
-     *  date_string: printable version of date
+     *  date: Date object of date message posted, useful for
+     *    sorting, diffs, etc.
+     *  gr_date: original message timestamp sutiable to pass to
+     *    gr-date-formatter
      *  revision: the revision the patchset was made against
      *  rechecks: the number of times we've seen the same
      *    ci run for the same revision
@@ -341,7 +347,7 @@ class ZuulSummaryStatusTab extends Polymer.Element {
         revision,
         rechecks,
         date,
-        date_string: date.toLocaleString(),
+        gr_date: message.date,
         status,
         succeeded: status === 'succeeded',
         pipeline,
