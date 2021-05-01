@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b06a5919_8ad6a8fb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2021-05-01T07:49:34Z",
+      "side": 1,
+      "message": "This depends on change 304803 in core.",
+      "revId": "0b02a7f62f3b88cabb1bfbbf4ad7bff5ec02c98d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
