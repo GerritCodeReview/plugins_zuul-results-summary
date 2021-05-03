@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c8a2492e_679515c0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1026270
+      },
+      "writtenOn": "2021-05-03T05:10:49Z",
+      "side": 1,
+      "message": "screenshot of results\n\nhttps://2edb60b3a6a531d453f1-339fe97ec5369f26a15d1d1eab4a2331.ssl.cf1.rackcdn.com/788882/3/check/system-config-run-review-3.2/22cd657/bridge.openstack.org/screenshots/gerrit-change-page-1.png",
+      "revId": "7a47ff57b21f50b34ff78f1b0897285c9260b4cc",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
