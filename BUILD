@@ -31,9 +31,6 @@ genrule2(
 
 polygerrit_plugin(
     name = "zuul-results-summary-ui",
-    srcs = glob([
-        "zuul-results-summary/*.js",
-    ]),
     app = "zuul-results-summary/zuul-results-summary.js",
     plugin_name = "zuul-results-summary",
 )
