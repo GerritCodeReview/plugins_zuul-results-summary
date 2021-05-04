@@ -51,6 +51,24 @@
       "parentUuid": "21b8d505_bd8bf2a9",
       "revId": "0b02a7f62f3b88cabb1bfbbf4ad7bff5ec02c98d",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4fe19d73_51b2d3f8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1026270
+      },
+      "writtenOn": "2021-05-04T19:05:10Z",
+      "side": 1,
+      "message": "Will this be safe for using with our 3.2/3.3 build from source as well?",
+      "parentUuid": "889d5c52_1543b8d5",
+      "revId": "0b02a7f62f3b88cabb1bfbbf4ad7bff5ec02c98d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
