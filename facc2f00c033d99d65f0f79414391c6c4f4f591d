@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a50006b5_34de9477",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1026270
+      },
+      "writtenOn": "2021-05-04T06:20:52Z",
+      "side": 1,
+      "message": "I have run this by a few people in #zuul on freenode and everyone liked the consistency.  screenshots show it working in the opendev test",
+      "revId": "facc2f00c033d99d65f0f79414391c6c4f4f591d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
