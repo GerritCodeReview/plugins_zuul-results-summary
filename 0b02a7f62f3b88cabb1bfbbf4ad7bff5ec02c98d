@@ -86,6 +86,24 @@
       "message": "It wouldn\u0027t work. This rule was introduced in stable-3.4 in gerrit core.",
       "revId": "0b02a7f62f3b88cabb1bfbbf4ad7bff5ec02c98d",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c3541151_ab450888",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1026270
+      },
+      "writtenOn": "2021-05-06T04:27:39Z",
+      "side": 1,
+      "message": "Ok, I guess this is the first thing we\u0027ve come across that means we\u0027ll need to create stable branches.",
+      "parentUuid": "d7f187ae_1ef119ff",
+      "revId": "0b02a7f62f3b88cabb1bfbbf4ad7bff5ec02c98d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
