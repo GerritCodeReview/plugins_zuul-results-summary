@@ -28,6 +28,23 @@ class ZuulSummaryStatusTab extends Polymer.Element {
     return {
       plugin: Object,
       _enabled: Boolean,
+      _zuulUrl: {
+        type: String,
+        value: null,
+      },
+      _zuulTenant: {
+        type: String,
+        value: null,
+      },
+      _zuulJobNameRule: {
+        String,
+        value: "Job",
+      },
+      _zuulJobNameToken: {
+        String,
+        value: null,
+      },
+      jobNameRule: Object,
       change: {
         type: Object,
         observer: '_processChange',
@@ -55,9 +72,7 @@ class ZuulSummaryStatusTab extends Polymer.Element {
     }
 
     th {
-      background-color: var(--background-color-primary, #f7ffff);
-      font-weight: normal;
-      color: var(--primary-text-color, rgb(33, 33, 33));
+      background-color: #f2f2f2;
     }
 
     thead tr th:first-of-type,
@@ -69,11 +84,11 @@ class ZuulSummaryStatusTab extends Polymer.Element {
       color: var(--link-color);
     }
 
-    tr:nth-child(even) {
+    tr:nth-child(odd) {
      background-color: var(--background-color-secondary, #f2f2f2);
     }
 
-    tr:nth-child(odd) {
+    tr:nth-child(even) {
      background-color: var(--background-color-tertiary, #f7ffff);
     }
 
@@ -132,6 +147,11 @@ class ZuulSummaryStatusTab extends Polymer.Element {
     .date {
       color: var(--deemphasized-text-color);
     }
+
+    .small_col {
+      width: 100px;
+      text-align: center;
+    }
   </style>
 
   <template is="dom-if" if="[[!_enabled]]">
@@ -139,26 +159,38 @@ class ZuulSummaryStatusTab extends Polymer.Element {
   </template>
   <template is="dom-repeat" items="[[__table]]">
    <div style="padding-bottom:2px;">
+    <div style="padding-top:10px;padding-left:10px;">
+      <template is="dom-if" if="{{item.succeeded}}"><span style="color:green"><iron-icon icon="gr-icons:check"></iron-icon></span></template>
+      <template is="dom-if" if="{{!item.succeeded}}"><span style="color:red"><iron-icon icon="gr-icons:close"></iron-icon></span></template>
+      <b>[[item.author_name]]</b> on Patchset <b>[[item.revision]]</b> in pipeline <b>[[item.pipeline]]</b>,
+      <template is="dom-if" if="{{item.rechecks}}">[[item.rechecks]] rechecks</template>,
+      <span class="date"><gr-date-formatter show-date-and-time="" date-str="[[item.gr_date]]"></gr-date-formatter></span>
+    </div>
+
    <table>
     <thead>
-     <tr>
-      <th>
-       <template is="dom-if" if="{{item.succeeded}}"><span style="color:green"><iron-icon icon="gr-icons:check"></iron-icon></span></template>
-       <template is="dom-if" if="{{!item.succeeded}}"><span style="color:red"><iron-icon icon="gr-icons:close"></iron-icon></span></template>
-       <b>[[item.author_name]]</b> on Patchset <b>[[item.revision]]</b> in pipeline <b>[[item.pipeline]]</b></th>
-      <th><template is="dom-if" if="{{item.rechecks}}">[[item.rechecks]] rechecks</template></th>
-      <th><span class="date"><gr-date-formatter show-date-and-time="" date-str="[[item.gr_date]]"></gr-date-formatter></span></th>
-     </tr>
+      <tr>
+        <template is="dom-repeat" items="[[jobNameRule]]" as="jobName">
+          <th>{{jobName}}</th>
+        </template>
+        <th class="small_col">Status</th>
+        <th class="small_col">Build log</th>
+        <th class="small_col">Time</th>
+        </tr>
     </thead>
     <tbody>
      <template is="dom-repeat" items="[[item.results]]" as="job">
       <tr>
-       <template is="dom-if" if="{{job.link}}"><td><a href="{{job.link}}">[[job.job]]</a></td></template>
-       <template is="dom-if" if="{{!job.link}}"><td><span style="color: var(--secondary-text-color)">[[job.job]]</span></td></template>
-       <template is="dom-if" if="{{job.errormsg}}"><td><span title="[[job.errormsg]]" class$="status-[[job.result]]">[[job.result]]</span></td></template>
-       <template is="dom-if" if="{{!job.errormsg}}"><td><span class$="status-[[job.result]]">[[job.result]]</span></td></template>
-       <td>[[job.time]]</td>
-      </tr>
+        <template is="dom-repeat" items="[[job.jobValue]]" as="jobValue">
+          <td>{{jobValue}}</td>
+        </template>
+
+        <template is="dom-if" if="{{job.errormsg}}"><td class="small_col"><span title="[[job.errormsg]]" class$="status-[[job.result]]">[[job.result]]</span></td></template>
+        <template is="dom-if" if="{{!job.errormsg}}"><td class="small_col"><span class$="status-[[job.result]]">[[job.result]]</span></td></template>
+        <template is="dom-if" if="{{job.link}}"><td class="small_col"><a href="{{job.link}}" target="_blank">log</a></td></template>
+        <template is="dom-if" if="{{!job.link}}"><td class="small_col"><span style="color: var(--secondary-text-color)">N/A</span></td></template>
+        <td class="small_col">[[job.time]]</td>
+        </tr>
      </template>
     </tbody>
    </table>
@@ -173,31 +205,43 @@ class ZuulSummaryStatusTab extends Polymer.Element {
    * @param {Object} change
    */
   async _processChange(change) {
-    // TODO(davido): Cache results of project config request
-    this._enabled = await this._projectEnabled(change.project);
-    if (this._enabled) {
+
+    const project = change.project;
+    const plugin = this.plugin.getPluginName();
+    const config = await this.getConfig(project, plugin);
+    if (config && config.enabled) {
+      this._enabled = true;
+      if (config.zuul_url) {
+        this._zuulUrl = config.zuul_url;
+      }
+      if (config.zuul_tenant) {
+        this._zuulTenant = config.zuul_tenant;
+      }
+      if (config.zuul_job_name_rule && config.zuul_job_name_token) {
+        this._zuulJobNameRule = config.zuul_job_name_rule;
+        this._zuulJobNameToken = config.zuul_job_name_token;
+        this.jobNameRule = this._zuulJobNameRule.split(this._zuulJobNameToken);
+      } else {
+        this._zuulJobNameRule = "";
+        this.jobNameRule = ["Job"];
+      }
       this._processMessages(change);
+    } else {
+      this._enabled = false;
+      console.info("zuul-results-summary plugin disabled");
     }
   }
 
   /**
-   * Returns whether the project is enabled for Zuul.
+   * Fetch the config for this plugin
    *
-   * @param {string} project
-   * @return {promise<boolean>} Resolves to true if the project is enabled
-   *     otherwise, false.
+   * @return {Promise} Resolves to the fetched config object,
+   *     or rejects if the response is non-OK.
    */
-  async _projectEnabled(project) {
-    const configPromise = this.plugin.restApi().get(
-        `/projects/${encodeURIComponent(project)}/` +
-        `${encodeURIComponent(this.plugin.getPluginName())}~config`);
-    try {
-      const config = await configPromise;
-      return config && config.enabled;
-    } catch (error) {
-      console.log(error);
-      return false;
-    }
+   async getConfig(project, plugin) {
+    return await this.plugin.restApi().get(
+            `/projects/${encodeURIComponent(project)}` +
+            `/${encodeURIComponent(plugin)}~config`);
   }
 
   /** Look for Zuul tag in message
@@ -243,8 +287,18 @@ class ZuulSummaryStatusTab extends Polymer.Element {
     }
 
     const status = statusMatch.groups.status;
-    const pipeline = statusMatch.groups.pipeline ?
-      statusMatch.groups.pipeline : 'unknown';
+    let pipeline = statusMatch.groups.pipeline;
+    if (!pipeline) {
+      // Zuul v4 doesn't have pipeline information in the status message.
+      // So, lookup again pipeline value from message.tag.
+      const tagRe = /^autogenerated:zuul:(?<pipeline>[\w]+)/gm;
+      let tagMatch = tagRe.exec(message.tag);
+      if (tagMatch) {
+        pipeline = tagMatch.groups.pipeline;
+      } else {
+        pipeline = 'unknown';
+      }
+    }
     return [status, pipeline];
   }
 
@@ -323,10 +377,24 @@ class ZuulSummaryStatusTab extends Polymer.Element {
       // Error status has a string before the time
       //   - error-job http://... : ERROR A freeform string in 2m 45s
 
-      const resultRe = /^- (?<job>[^ ]+) (?:(?<link>https?:\/\/[^ ]+)|[^ ]+) : ((ERROR (?<errormsg>.*?) in (?<errtime>.*))|(?<result>[^ ]+)( in (?<time>.*))?)/;
+      const resultRe = /^- (?<job>[^ ]+) (?:(?<link>https?:\/\/[^ ]+)|(?<implicit_link>build\/[0-9a-f]+)) : ((ERROR (?<errormsg>.*?) in (?<errtime>.*))|(?<result>[^ ]+)( in (?<time>.*))?)/;
       lines.forEach(line => {
         const result = resultRe.exec(line);
         if (result) {
+          if (result.groups.implicit_link && this._zuulUrl && this._zuulTenant) {
+            /*
+             In case of https url not exists in the line,
+             Get URL/Tenant information from project.config and set URL link.
+               Ex) https://example.org/t/public/build/xxxxx
+             */
+            result.groups.link = [
+                this._zuulUrl.replace(/\/$/, ""),
+                "t",
+                this._zuulTenant,
+                result.groups.implicit_link
+            ].join('/');
+          }
+
           if (result.groups.result === "SKIPPED") {
             result.groups.link = null;
           }
@@ -337,6 +405,18 @@ class ZuulSummaryStatusTab extends Polymer.Element {
             result.groups.result = "ERROR";
             result.groups.time = result.groups.errtime;
           }
+
+          if (this._zuulJobNameRule && this._zuulJobNameToken) {
+            // Save current job name as token splited array.
+            result.groups["jobValue"] = result.groups.job.split(this._zuulJobNameToken);
+
+            // If jobname doesn't have enough column values compare with jobNameRule length,
+            // then fill the empty values.
+            result.groups["jobValue"].length = this.jobNameRule.length;
+          } else {
+            result.groups["jobValue"] = [result.groups.job];
+          }
+
           results.push(result.groups);
         }
       });

@@ -17,6 +17,7 @@ package com.googlesource.gerrit.plugins.zuulresultssummary;
 import com.google.gerrit.extensions.annotations.PluginName;
 import com.google.gerrit.extensions.restapi.Response;
 import com.google.gerrit.extensions.restapi.RestReadView;
+import com.google.gerrit.server.config.PluginConfig;
 import com.google.gerrit.server.config.PluginConfigFactory;
 import com.google.gerrit.server.project.NoSuchProjectException;
 import com.google.gerrit.server.project.ProjectResource;
@@ -37,16 +38,24 @@ class GetConfig implements RestReadView<ProjectResource> {
   @Override
   public Response<ZuulResultsSummaryConfig> apply(ProjectResource project)
       throws NoSuchProjectException {
-    ZuulResultsSummaryConfig result = new ZuulResultsSummaryConfig();
-    result.enabled =
-        cfgFactory
-            .getFromProjectConfigWithInheritance(project.getNameKey(), pluginName)
-            .getBoolean(Module.KEY_PLUGIN_ENABLED, true);
 
+    PluginConfig cfg = cfgFactory.getFromProjectConfigWithInheritance(
+      project.getNameKey(), pluginName);
+    ZuulResultsSummaryConfig result = new ZuulResultsSummaryConfig();
+
+    result.enabled = cfg.getBoolean(Module.KEY_PLUGIN_ENABLED, true);
+    result.zuulUrl = cfg.getString("url", null);
+    result.zuulTenant = cfg.getString("tenant", null);
+    result.zuulJobNameRule = cfg.getString("jobNameRule", null);
+    result.zuulJobNameToken = cfg.getString("jobNameToken", null);
     return Response.ok(result);
   }
 
   static class ZuulResultsSummaryConfig {
     boolean enabled;
+    String zuulUrl;
+    String zuulTenant;
+    String zuulJobNameRule;
+    String zuulJobNameToken;
   }
 }

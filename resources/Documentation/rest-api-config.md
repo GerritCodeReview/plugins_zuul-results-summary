@@ -33,7 +33,11 @@ contains the configuration of the @PLUGIN@ plugin.
 
   )]}'
   {
-    "enabled": true
+    "enabled": true,
+    "zuul_url": "https://example.org",
+    "zuul_tenant": "public",
+    "zuul_job_name_rule": "OS__Branch__Mode__Chip__Config",
+    "zuul_job_name_token": "__",
   }
 ```
 
@@ -49,10 +53,13 @@ If the name ends with `.git`, the suffix will be automatically removed.
 The `ConfigInfo` entity contains the configuration of the @PLUGIN@
 plugin.
 
-|Field Name       |Description|
-|-----------------|-----------|
-|enabled          | Whether the project is enabled for Zuul integration|
-
+|Field Name         |Description|
+|-------------------|-----------|
+|enabled            | Whether the project is enabled for Zuul integration|
+|zuul_url           | Zuul Web URL|
+|zuul_tenant        | Zuul Tenant name|
+|zuul_job_name_rule | Zuul Job name rules|
+|zuul_job_name_token| Zuul Job name token|
 
 SEE ALSO
 --------
