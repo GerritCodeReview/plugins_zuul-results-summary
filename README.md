@@ -2,11 +2,26 @@
 
 Polygerrit plugin to show a summary of Zuul results in a change tab
 
-Results are show in reverse chronological order, additionally sorted
+Results are shown in reverse chronological order, additionally sorted
 by CI userid's in ZUUL_PRIORITY (earlier entry in the list means
 sorted first in the output table).  i.e. if you consider one of your
 CI reporters to be the main one, you should place it first in this
 list.
+
+Zuul pipeline definitions are pattern matched from comments posted by
+Zuul; for the best results you should configure Zuul to explicitly
+specify the pipeline in the `success-message` and `failure-message` in
+trailing parentheses; i.e. `Build <status> (<name> pipeline)`.
+
+For example:
+
+```
+- pipeline:
+    name: check
+    success-message: Build succeeded (check pipeline).
+    failure-message: Build failed (check pipeline).
+    ...
+```
 
 ## UI tests
 
