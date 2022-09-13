@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0497bccf_efb74765",
+        "filename": "README.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1026270
+      },
+      "writtenOn": "2022-09-13T19:46:51Z",
+      "side": 1,
+      "message": "I\u0027d agree we can do better describing this, thanks.  However we do also match just \"Build succeeded\".  I\u0027m interested in what the output you had that was failing?",
+      "revId": "fd2cd3378d383970a8a21be391e6c0a3246f0300",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
