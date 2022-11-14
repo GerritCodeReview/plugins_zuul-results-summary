@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b3ef3f5d_ae76fc17",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1026270
+      },
+      "writtenOn": "2022-11-14T02:44:18Z",
+      "side": 1,
+      "message": "It seems we either needs to\n\n1) make a stable-3.4 branch, and then merge this\n2) decide that 3.4 is far enough behind us now that we can just merge this\n\nFrom OpenDev POV, we\u0027re at gerrit 3.5, probably 3.6 in the short-term future.  So I\u0027m pretty OK with just merging it, if this helps Gerrit core due to the updated dependencies, etc.\n\nI\u0027m not sure what the branching policy is, but I\u0027m also happy with that solution to, if someone tells me what to do 😊",
+      "revId": "45a7a3747a942149c4e7e4dd8b9adac97bd6bec4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
