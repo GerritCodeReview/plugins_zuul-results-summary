@@ -34,6 +34,24 @@
       "parentUuid": "b3ef3f5d_ae76fc17",
       "revId": "45a7a3747a942149c4e7e4dd8b9adac97bd6bec4",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "815ae9d4_5fe5fe05",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1026270
+      },
+      "writtenOn": "2022-11-16T00:57:01Z",
+      "side": 1,
+      "message": "Heh, I didn\u0027t realise I had permissions to do that, but it turned out to be easy.  So now we have a stable-3.4 branch from the current main.  I think we can merge this at will",
+      "parentUuid": "f49ff2b4_963d6bf4",
+      "revId": "45a7a3747a942149c4e7e4dd8b9adac97bd6bec4",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
