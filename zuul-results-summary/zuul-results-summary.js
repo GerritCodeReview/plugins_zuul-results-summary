@@ -143,8 +143,8 @@ class ZuulSummaryStatusTab extends Polymer.Element {
     <thead>
      <tr>
       <th>
-       <template is="dom-if" if="{{item.succeeded}}"><span style="color:green"><iron-icon icon="gr-icons:check"></iron-icon></span></template>
-       <template is="dom-if" if="{{!item.succeeded}}"><span style="color:red"><iron-icon icon="gr-icons:close"></iron-icon></span></template>
+       <template is="dom-if" if="{{item.succeeded}}"><span style="color:green"><gr-icon icon="check"></gr-icon></span></template>
+       <template is="dom-if" if="{{!item.succeeded}}"><span style="color:red"><gr-icon icon="close"></gr-icon></span></template>
        <b>[[item.author_name]]</b> on Patchset <b>[[item.revision]]</b> in pipeline <b>[[item.pipeline]]</b></th>
       <th><template is="dom-if" if="{{item.rechecks}}">[[item.rechecks]] rechecks</template></th>
       <th><span class="date"><gr-date-formatter show-date-and-time="" date-str="[[item.gr_date]]"></gr-date-formatter></span></th>
