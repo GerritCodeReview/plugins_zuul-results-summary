@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "480b44f8_9ad05c6c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011217
+      },
+      "writtenOn": "2023-04-27T17:00:19Z",
+      "side": 1,
+      "message": "I\u0027m testing this in OpenDev with https://review.opendev.org/c/opendev/system-config/+/881749 this change should deploy gerrit with this updated plugin and capture screenshots of the results under Gerrit 3.7 and 3.8. We can then check if the rendering occurred properly.",
+      "revId": "64c97244b15a49ab26a4b2150b6471e405c07782",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
